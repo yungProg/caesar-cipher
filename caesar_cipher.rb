@@ -1,8 +1,11 @@
 def caesar_cipher(text, shift)
-    
+    #check if `text`` is a string
+    if !text.is_a?(String)
+      return "Invalid input. Enter a string of text(s)"
+    end
     #check if `shift` is a number
     if !shift.is_a?(Numeric)
-        return "Invalid input"
+        return "Invalid input. Please enter a number"
     elsif shift.is_a?(Numeric)
         shift = shift.to_i
     end
@@ -34,4 +37,4 @@ def caesar_cipher(text, shift)
     end
     shifted_codes.pack("C*")
 end
-caesar_cipher(44, 2)
+p caesar_cipher("44", 2)
